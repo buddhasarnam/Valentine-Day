@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Valentine ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+}
+
+    /* Floating Love Emojis */
+.love {
+  position: absolute;
+  bottom: -20px;
+  pointer-events: none;
+  animation: floatLove linear forwards;
+}
+
+@keyframes floatLove {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh) scale(1.8);
+    opacity: 0;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  /* SAME BACKGROUND */
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+
+  font-family:"Poppins", sans-serif;
+  text-align:center;
+  padding:20px;
+}
+
+@keyframes bgMove {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+.container{
+  max-width:420px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(18px);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+img{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:20px;
+}
+
+.bottom-text{
+  margin-top:15px;
+  font-size:20px;
+  font-family:"Playfair Display", serif;
+  color:#4a1c2f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- YOUR PICTURE -->
+  <img src="us.jpeg">
+
+  <!-- BOTTOM TEXT -->
+  <div class="bottom-text">
+    I Love You So Much Mero Jaan🥹💘❤️<br>
+    Can't wait to make beautiful memories together.
+    Thank You! 😘😘😘
+  </div>
+
+</div>
+<script>
+function createLove() {
+  const love = document.createElement("div");
+  love.className = "love";
+
+  // Random love emojis
+  const emojis = ["❤️","💗","💖","💕","💘"];
+  love.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+  love.style.left = Math.random() * 100 + "vw";
+  love.style.fontSize = Math.random() * 22 + 16 + "px";
+  love.style.animationDuration = Math.random() * 3 + 4 + "s";
+  love.style.opacity = Math.random() * 0.5 + 0.5;
+
+  document.body.appendChild(love);
+
+  setTimeout(() => love.remove(), 8000);
+}
+
+setInterval(createLove, 350);
+</script>
+
+</body>
+</html>

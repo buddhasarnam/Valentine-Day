@@ -206,18 +206,19 @@
     });
 
     yesBtn.addEventListener("click", () => {
-      yesSound.play();
+  yesSound.play();
 
-      confetti({
-        particleCount: 260,
-        spread: 120,
-        origin: { y: 0.65 }
-      });
+  confetti({
+    particleCount: 260,
+    spread: 120,
+    origin: { y: 0.65 }
+  });
 
-      setTimeout(() => {
-        alert("Thank You Mero Jaanu! Cant Wait To Spend Valentine Day Together ♥️");
-      }, 500);
-    });
+  setTimeout(() => {
+    window.location.href = "yes.html"; // next page file
+  }, 1200);
+});
+
 
     function createHeart() {
       const heart = document.createElement("div");
